@@ -6,6 +6,7 @@ public class CalculadoraNota {
     public static final double NOTA_MAXIMA_A1_A2 = 30;
     public static final double NOTA_MAXIMA_A3 = 40;
     public static final double FREQUENCIA_MINIMA = 75;
+    public static final double SOMA_MINIMA_PARA_AI = 40;
 
     public double calcularNotaFinal(double a1, double a2, double a3) {
         validarNota(a1, NOTA_MAXIMA_A1_A2, "A1");
@@ -35,7 +36,7 @@ public class CalculadoraNota {
     public boolean podeFazerAI(double a1, double a2, double a3, double frequencia) {
         boolean reprovadoPorNota = !estaAprovadoPorNota(a1 + a2 + a3);
         boolean frequenciaSuficiente = frequencia >= FREQUENCIA_MINIMA;
-        boolean atingeMinimo = (a1 + a3 >= 40) || (a2 + a3 >= 40);
+        boolean atingeMinimo = (a1 + a3 >= SOMA_MINIMA_PARA_AI) || (a2 + a3 >= SOMA_MINIMA_PARA_AI);
         return reprovadoPorNota && frequenciaSuficiente && atingeMinimo;
     }
 }
