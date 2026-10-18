@@ -33,6 +33,9 @@ public class CalculadoraNota {
     }
 
     public boolean podeFazerAI(double a1, double a2, double a3, double frequencia) {
-        return false;
+        boolean reprovadoPorNota = !estaAprovadoPorNota(a1 + a2 + a3);
+        boolean frequenciaSuficiente = frequencia >= FREQUENCIA_MINIMA;
+        boolean atingeMinimo = (a1 + a3 >= 40) || (a2 + a3 >= 40);
+        return reprovadoPorNota && frequenciaSuficiente && atingeMinimo;
     }
 }
