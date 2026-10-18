@@ -20,10 +20,13 @@ public class CalculadoraNota {
     }
 
     public String situacao(double notaFinal, double frequencia) {
-        if (estaAprovadoPorNota(notaFinal) && frequencia >= FREQUENCIA_MINIMA) {
-            return "APROVADO";
+        if (frequencia < FREQUENCIA_MINIMA) {
+            return "REPROVADO POR FALTA";
         }
-        return "REPROVADO";
+        if (!estaAprovadoPorNota(notaFinal)) {
+            return "REPROVADO POR NOTA";
+        }
+        return "APROVADO";
     }
 
     private void validarNota(double nota, double notaMaxima, String nomeAvaliacao) {
