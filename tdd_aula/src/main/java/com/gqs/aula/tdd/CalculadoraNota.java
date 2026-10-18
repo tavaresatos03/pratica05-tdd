@@ -42,10 +42,11 @@ public class CalculadoraNota {
 
     public double aplicarAI(double a1, double a2, double a3, double notaAI) {
         validarNota(notaAI, NOTA_MAXIMA_A1_A2, "AI");
+        double notaFinal = a1 + a2 + a3;
         double menor = Math.min(a1, a2);
         if (notaAI > menor) {
-            return a1 + a2 + a3 - menor + notaAI;
+            notaFinal = notaFinal - menor + notaAI;
         }
-        return a1 + a2 + a3;
+        return notaFinal;
     }
 }
