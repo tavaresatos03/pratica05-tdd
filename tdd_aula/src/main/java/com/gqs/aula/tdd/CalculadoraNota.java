@@ -39,4 +39,8 @@ public class CalculadoraNota {
         boolean atingeMinimo = (a1 + a3 >= SOMA_MINIMA_PARA_AI) || (a2 + a3 >= SOMA_MINIMA_PARA_AI);
         return reprovadoPorNota && frequenciaSuficiente && atingeMinimo;
     }
+
+    public double aplicarAI(double a1, double a2, double a3, double notaAI) {
+        return 0;
+    }
 }
